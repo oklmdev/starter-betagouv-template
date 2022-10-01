@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc && cp -r src/assets dist && yarn build:front",
     "build:front": "webpack --config=webpack.config.js",
+    "build:cms": "webpack --config=webpack.cms.config.js",
     "start": "node dist/index.js",
     "start:dev": "nodemon dist/index.js",
     "watch:front": "webpack --config=webpack.config.js --watch",
@@ -46,6 +47,7 @@
     "express-async-errors": "^3.1.1",
     "express-session": "^1.17.2",
     "glob": "^8.0.3",
+    "netlify-cms": "^2.10.192",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-markdown": "6.0.0",

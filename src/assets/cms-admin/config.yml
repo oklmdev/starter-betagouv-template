@@ -1,10 +1,12 @@
 backend:
-  name: github
-  branch: master
-  repo: user/repo
-  api_root: https://api.github.com
-  auth_scope: repo
-  base_url: https://netlify-cms-github-oauth-provider.osc-fr1.scalingo.io
+  # name: github
+  # branch: master
+  # repo: user/repo
+  # api_root: https://api.github.com
+  # auth_scope: repo
+  # base_url: https://netlify-cms-github-oauth-provider.osc-fr1.scalingo.io
+  name: test-repo
+  branch: master # Branch to update (optional; defaults to master)
 media_folder: public/img
 public_folder: img
 collections:
