@@ -1,4 +1,5 @@
 backend:
+  # name: test-repo # For local
   name: github
   branch: master
   repo: user/repo
