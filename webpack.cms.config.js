@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging' ? 'production' : 'development',
-  entry: './src/assets/cms-admin/index.ts',
+  entry: './src/assets/cms/index.ts',
   target: 'web',
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
@@ -30,6 +30,6 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist', 'assets', 'cms-admin')
+    path: path.resolve(__dirname, 'dist', 'assets', 'cms')
   }
 };
