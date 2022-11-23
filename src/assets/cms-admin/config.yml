@@ -8,8 +8,11 @@ backend:
   api_root: https://api.github.com
   auth_scope: repo
   base_url: https://netlify-cms-github-oauth-provider.osc-fr1.scalingo.io
-media_folder: public/img
+
+media_folder: src/assets/img
+
 public_folder: img
+
 collections:
   - name: 'pages'
     label: 'Pages'
