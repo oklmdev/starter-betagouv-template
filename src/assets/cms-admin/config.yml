@@ -1,3 +1,5 @@
+locale: fr
+
 backend:
   # name: test-repo # For local
   name: github
