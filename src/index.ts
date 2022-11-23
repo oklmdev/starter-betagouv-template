@@ -35,6 +35,10 @@ app.use(pageRouter);
 
 app.use(express.static(path.join(__dirname, 'assets')));
 
+app.get('/cms/img/:path', (request, response) => {
+  response.send('/img/' + request.params.path);
+});
+
 app.listen(PORT, (): void => {
   // eslint-disable-next-line no-console
   console.log('Server listening to port', PORT);
