@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import { Nl2Br } from '../_components/Nl2Br';
 
 export type AccueilPageProps = {
@@ -101,7 +102,7 @@ export const AccueilPage = ({
       </header>
       <main role='main' id='contenu'>
         <div className='fr-container fr-py-6w fr-px-2w'>
-          <ReactMarkdown children={body} />
+          <ReactMarkdown rehypePlugins={[rehypeRaw]} children={body} />
         </div>
       </main>
       <footer role='contentinfo' className='fr-footer' id='footer'>
