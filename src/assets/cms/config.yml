@@ -11,7 +11,7 @@ backend:
 
 media_folder: src/assets/img
 
-public_folder: img
+public_folder: /img
 
 collections:
   - name: 'pages'
