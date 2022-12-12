@@ -2,7 +2,8 @@ locale: fr
 
 backend:
   # name: test-repo # For local
-  name: github
+  # name: github
+  name: test-repo
   branch: master
   repo: user/repo
   api_root: https://api.github.com
@@ -21,14 +22,18 @@ collections:
         name: 'landing'
         file: 'src/pages/accueil/accueil.json'
         fields:
+
           - {
               label: 'République Française / Nom du ministère',
               name: 'ministère',
               widget: 'text',
               default: 'République Française'
             }
+
           - { label: 'Nom du service', name: 'nomService', widget: 'string' }
+
           - { label: 'Sous titre du service', name: 'sousTitreService', widget: 'string', required: false }
+
           - label: 'Liens entête'
             name: 'liensEntête'
             widget: 'list'
@@ -41,6 +46,7 @@ collections:
               - label: 'Lien'
                 name: 'url'
                 widget: 'string'
+
           - label: 'Menu'
             name: 'menu'
             widget: 'list'
@@ -53,8 +59,33 @@ collections:
               - label: 'Lien'
                 name: 'url'
                 widget: 'string'
-          - { label: 'Corps', name: 'body', widget: 'markdown' }
+
+          - label: 'Hero'
+            name: 'body'
+            widget: 'object'
+            fields:
+              - label: 'Titre'
+                name: 'titre'
+              - label: 'Description'
+                name: 'description'
+                widget: 'markdown'
+              - label: 'Illustration'
+                name: 'illustration'
+                widget: 'image'
+              - label: 'Appel à l’action'
+                name: 'calltoaction'
+                widget: 'object'
+                fields: 
+                  - label: 'Titre'
+                    name: 'titre'
+                  - label: 'Url'
+                    name: 'url'
+                    widget: 'string'
+                    patterns: ['/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/', "Doit être une url valide"]
+              
+
           - { label: 'Description en pied de page', name: 'descriptionFooter', widget: 'markdown' }
+
           - label: 'Liens en pied de page'
             name: 'liensFooter'
             widget: 'list'

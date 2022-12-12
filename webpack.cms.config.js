@@ -3,21 +3,28 @@ const path = require('node:path');
 const fs = require('node:fs');
 const webpack = require('webpack');
 
+const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   mode: process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging' ? 'production' : 'development',
   entry: './src/assets/cms/index.ts',
   target: 'web',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.yml']
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.npm_package_version': JSON.stringify(process.env.npm_package_version)
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/assets/cms/config.yml', to: 'config.yml' },
+      ],
+    }),
   ],
   module: {
     rules: [
-      {
+      { 
         test: /\.tsx?$/,
         loader: 'esbuild-loader',
         exclude: '/node_modules/',

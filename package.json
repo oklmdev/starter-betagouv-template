@@ -10,7 +10,8 @@
     "start": "node dist/index.js",
     "start:dev": "nodemon dist/index.js",
     "watch:front": "webpack --config=webpack.config.js --watch",
-    "watch": "tsc && cp -r src/assets dist && concurrently \"tsc -w\" \"yarn run start\" \"yarn watch:front\"",
+    "watch:cms": "webpack --config=webpack.cms.config.js --watch",
+    "watch": "tsc && cp -r src/assets dist && concurrently \"tsc -w\" \"yarn run start\" \"yarn watch:front\" \"yarn watch:cms\"",
     "test": "jest --runInBand",
     "test:unit": "jest --testRegex='^(().)*.spec.ts$' --runInBand",
     "test:watch": "jest --runInBand --watch",
@@ -39,6 +40,7 @@
   "packageManager": "yarn@1.22.17",
   "dependencies": {
     "callsites": "3.1.0",
+    "copy-webpack-plugin": "^11.0.0",
     "dotenv": "^16.0.0",
     "esbuild-loader": "^2.19.0",
     "express": "^4.17.2",
